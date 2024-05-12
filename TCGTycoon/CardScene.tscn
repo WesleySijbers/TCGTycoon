@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://ugp8o1c7g81y"]
+
+[ext_resource type="Texture2D" uid="uid://ctyf6mpowa3th" path="res://Res/Cards/images/CardBorder.png" id="1_24w32"]
+[ext_resource type="Script" path="res://SetCardDetails.cs" id="2_51xrw"]
+[ext_resource type="Texture2D" uid="uid://bru4gyryunpsb" path="res://Res/Cards/images/dragon.jpg" id="2_6104f"]
+[ext_resource type="Resource" uid="uid://dgbu03k2y6aio" path="res://Res/Cards/testCard.tres" id="3_3gt6x"]
+[ext_resource type="Theme" uid="uid://ceb83axxcfxem" path="res://CardText.tres" id="4_tf4h4"]
+
+[node name="Card" type="TextureRect"]
+custom_minimum_size = Vector2(100, 140)
+anchors_preset = -1
+anchor_right = 0.003
+anchor_bottom = 0.007
+offset_right = 94.24
+offset_bottom = 132.44
+texture = ExtResource("1_24w32")
+expand_mode = 1
+script = ExtResource("2_51xrw")
+card = ExtResource("3_3gt6x")
+
+[node name="CardName" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.744
+anchor_right = 0.885
+anchor_bottom = 0.791
+offset_left = -0.480001
+offset_top = 0.440002
+offset_right = -1.60001
+offset_bottom = 10.16
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_tf4h4")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[b]Name[/b]"
+
+[node name="CardText" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.791
+anchor_right = 0.903
+anchor_bottom = 0.915
+offset_left = -7.68
+offset_top = 0.900002
+offset_right = -7.83001
+offset_bottom = 1.25999
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_tf4h4")
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+[node name="CardArt" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.163
+anchor_right = 0.872
+anchor_bottom = 0.674
+offset_left = -0.128006
+offset_top = -0.180008
+offset_right = 0.127991
+offset_bottom = 0.359985
+texture = ExtResource("2_6104f")
+expand_mode = 1
