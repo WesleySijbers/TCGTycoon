@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://diqhju5anod0r"]
+
+[ext_resource type="Script" path="res://Scripts/ChestInventoryScreen.cs" id="1_g3ex5"]
+
+[node name="AspectRatioContainer" type="CanvasLayer" node_paths=PackedStringArray("PlayerInventoryGrid", "PlayerInventoryScrollContainer", "InventoryGrid", "InventoryScrollContainer")]
+script = ExtResource("1_g3ex5")
+PlayerInventoryGrid = NodePath("PlayerSroll/PlayerGrid")
+PlayerInventoryScrollContainer = NodePath("PlayerSroll")
+InventoryGrid = NodePath("ScrollContainer/ChestGrid")
+InventoryScrollContainer = NodePath("ScrollContainer")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 66.0
+offset_top = 76.0
+offset_right = 927.0
+offset_bottom = 1024.0
+
+[node name="ChestGrid" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3
+
+[node name="PlayerSroll" type="ScrollContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -777.0
+offset_top = 60.0
+offset_right = -52.0
+offset_bottom = 1008.0
+grow_horizontal = 0
+
+[node name="PlayerGrid" type="GridContainer" parent="PlayerSroll"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3

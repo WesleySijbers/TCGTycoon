@@ -6,7 +6,26 @@ public partial class PlayerMovement : CharacterBody2D
 	[Export] public float Speed = 300.0f;
 
 	[Export] public float Damping = 50f;
+
+	public Inventory inventory;
 	
+	bool inventoryOpen = false;
+
+	AnimatedSprite2D sprites;
+
+	public override void _Ready()
+	{
+		inventory = GetNode<Inventory>("Inventory");
+		sprites = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		if (@event.IsActionPressed("OpenInventory"))
+		{
+			inventory.ToggleInventory();
+		}
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -19,9 +38,27 @@ public partial class PlayerMovement : CharacterBody2D
 		{
 			velocity.X = direction.X * Speed;
 			velocity.Y = direction.Y * Speed;
+
+			if(direction.Y  < 0)
+			{
+				//sprites.Animation = "up";
+			}
+			else if(direction.Y > 0)
+			{
+				sprites.Play("down");
+			}
+			else if(direction.X < 0)
+			{
+				//sprites.Animation = "left";
+			}
+			else if(direction.X > 0)
+			{
+				//sprites.Animation = "right";
+			}
 		}
 		else
 		{
+			sprites.Animation = "idle";
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Damping);
 			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, Damping);
 		}

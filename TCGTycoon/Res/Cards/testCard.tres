@@ -1,10 +1,10 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dgbu03k2y6aio"]
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://dgbu03k2y6aio"]
 
-[ext_resource type="Script" path="res://Card.cs" id="1_qhji3"]
 [ext_resource type="Texture2D" uid="uid://bru4gyryunpsb" path="res://Res/Cards/images/dragon.jpg" id="1_ta62q"]
+[ext_resource type="Script" path="res://Scripts/CardResource.cs" id="2_r718p"]
 
 [resource]
-script = ExtResource("1_qhji3")
-Name = "Card"
+script = ExtResource("2_r718p")
+Name = "TestCard"
 Description = "This is a card."
 Image = ExtResource("1_ta62q")

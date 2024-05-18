@@ -1,7 +1,8 @@
 using Godot;
 using System;
 
-public partial class Card : Resource
+[GlobalClass]
+public partial class CardResource : Resource
 {
 	[Export] public string Name = "Card";
 	[Export] public string Description = "This is a card.";

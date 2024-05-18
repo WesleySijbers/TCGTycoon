@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvrn5gyu220pu"]
 
 [ext_resource type="Texture2D" uid="uid://cw3tyix3xb7h2" path="res://Res/Chest.png" id="1_r6poj"]
-[ext_resource type="Script" path="res://Chest.cs" id="2_8hpg7"]
-[ext_resource type="PackedScene" uid="uid://ugp8o1c7g81y" path="res://CardScene.tscn" id="3_gado3"]
-[ext_resource type="Resource" uid="uid://dgbu03k2y6aio" path="res://Res/Cards/testCard.tres" id="4_lev5b"]
+[ext_resource type="Script" path="res://Scripts/Chest.cs" id="2_8hpg7"]
+[ext_resource type="PackedScene" uid="uid://r61ngyvv2fe2" path="res://prefabs/Components/inventoryComp.tscn" id="3_ihtoq"]
+[ext_resource type="Script" path="res://Scripts/ChestInventory.cs" id="4_e1w78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t15ug"]
 size = Vector2(32, 16)
@@ -12,10 +12,14 @@ size = Vector2(32, 16)
 texture_filter = 1
 texture = ExtResource("1_r6poj")
 script = ExtResource("2_8hpg7")
-cardScene = ExtResource("3_gado3")
-cards = Array[Resource]([ExtResource("4_lev5b"), ExtResource("4_lev5b"), ExtResource("4_lev5b"), ExtResource("4_lev5b")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_t15ug")
+
+[node name="Inventory" parent="." instance=ExtResource("3_ihtoq")]
+script = ExtResource("4_e1w78")
+InventoryScreen = null
+cardScene = null
+cards = null

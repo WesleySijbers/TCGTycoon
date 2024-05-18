@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cougmn2tlhul4"]
+[gd_scene load_steps=7 format=3 uid="uid://cougmn2tlhul4"]
 
-[ext_resource type="PackedScene" uid="uid://btwx0rukfuj3q" path="res://Player.tscn" id="1_hdyoh"]
-[ext_resource type="TileSet" uid="uid://dfa0fqst42glu" path="res://ShopTileset.tres" id="2_uaoon"]
-[ext_resource type="PackedScene" uid="uid://bvrn5gyu220pu" path="res://Chest.tscn" id="3_pkmcs"]
-[ext_resource type="PackedScene" uid="uid://dhg73xyvbmphf" path="res://ChestInventoryScene.tscn" id="4_6sxrk"]
+[ext_resource type="PackedScene" uid="uid://btwx0rukfuj3q" path="res://prefabs/Objects/Player.tscn" id="1_hdyoh"]
+[ext_resource type="TileSet" uid="uid://dfa0fqst42glu" path="res://Res/ShopTileset.tres" id="2_uaoon"]
+[ext_resource type="PackedScene" uid="uid://bvrn5gyu220pu" path="res://prefabs/Objects/Chest.tscn" id="3_pkmcs"]
+[ext_resource type="Resource" uid="uid://dgbu03k2y6aio" path="res://Res/Cards/testCard.tres" id="4_fa534"]
+[ext_resource type="PackedScene" uid="uid://diqhju5anod0r" path="res://prefabs/Objects/ChestTradeInventoryScreen.tscn" id="4_hftoh"]
+[ext_resource type="PackedScene" uid="uid://ugp8o1c7g81y" path="res://prefabs/Objects/CardScene.tscn" id="5_6qtba"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,5 +27,11 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="Chest" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("3_pkmcs")]
 position = Vector2(-69, 66)
-InventoryScreen = ExtResource("4_6sxrk")
 Player = NodePath("../Player")
+
+[node name="Inventory" parent="Chest" index="1"]
+InventoryScreen = ExtResource("4_hftoh")
+cardScene = ExtResource("5_6qtba")
+cards = Array[Resource]([ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534"), ExtResource("4_fa534")])
+
+[editable path="Chest"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://r61ngyvv2fe2"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory.cs" id="1_rw7vj"]
+[ext_resource type="PackedScene" uid="uid://dhg73xyvbmphf" path="res://prefabs/Objects/InventoryScreen.tscn" id="2_pmurr"]
+[ext_resource type="PackedScene" uid="uid://ugp8o1c7g81y" path="res://prefabs/Objects/CardScene.tscn" id="3_njf88"]
+
+[node name="Inventory" type="Node"]
+script = ExtResource("1_rw7vj")
+InventoryScreen = ExtResource("2_pmurr")
+cardScene = ExtResource("3_njf88")
+cards = Array[Resource]([])
